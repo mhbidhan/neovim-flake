@@ -2,8 +2,10 @@
   imports = [
     ./auto-close.nix
     ./auto-complete.nix
+    ./binds.nix
     ./key-maps.nix
     ./custom.nix
+    ./git.nix
     ./neo-tree.nix
     ./telescope.nix
     ./lsp.nix
@@ -11,7 +13,6 @@
     ./theme.nix
     ./harpoon.nix
     ./aerial.nix
-    ./which-key.nix
     ./clipboard.nix
     ./treesitter-context.nix
   ];
@@ -20,13 +21,19 @@
     viAlias = true;
     vimAlias = true;
 
+    statusline.lualine.enable = true;
+
     ui = {
       noice.enable = true;
     };
 
     visuals = {
       nvim-web-devicons.enable = true;
+      cinnamon-nvim.enable = true;
       fidget-nvim.enable = true;
+
+      highlight-undo.enable = true;
+      indent-blankline.enable = true;
     };
 
     telescope = {

@@ -1,12 +1,12 @@
-{...}: {
+_: {
   vim = {
     theme = {
       enable = true;
-      name = "tokyonight";
-      style = "night";
+      # name = "tokyonight";
+      # style = "night";
+      name = "catppuccin";
+      style = "mocha";
       transparent = true;
     };
-
-    visuals.nvim-web-devicons.enable = true;
   };
 }

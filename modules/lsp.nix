@@ -1,5 +1,13 @@
 {pkgs, ...}: {
   vim = {
+    treesitter = {
+      enable = true;
+      grammars = [
+        pkgs.vimPlugins.nvim-treesitter-parsers.tsx
+        pkgs.vimPlugins.nvim-treesitter-parsers.typescript
+      ];
+    };
+
     languages = {
       enableTreesitter = true;
       enableFormat = true;
@@ -14,6 +22,7 @@
       bash.enable = true;
       html.enable = true;
       css.enable = true;
+      # jsx.enable = true;
       tailwind.enable = true;
       go.enable = true;
       java.enable = true;
@@ -37,6 +46,8 @@
     };
 
     extraPackages = with pkgs; [
+      fd
+      ripgrep
       emmet-ls
       nixd
       gopls
@@ -45,15 +56,16 @@
       omnisharp-roslyn
       codeium
       nodePackages.prettier
-      nodePackages.typescript-language-server
-      nodePackages.vscode-langservers-extracted
       angular-language-server
     ];
 
     luaConfigRC.emmet-ls = ''
+      require("luasnip.loaders.from_vscode").lazy_load()
+
+
       require('lspconfig').emmet_ls.setup({
         filetypes = {
-          "css", "eruby", "htmlangular,", "html", "javascript", "javascriptreact",
+          "css", "eruby", "htmlangular", "html", "javascript", "javascriptreact",
           "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue"
         },
         init_options = {
