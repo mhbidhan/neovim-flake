@@ -1,8 +1,13 @@
-{...}: {
+{pkgs, ...}: {
   vim = {
     telescope = {
       enable = true;
       setupOpts = {
+        extensions = {
+          ui-select = {
+            "__raw" = "require('telescope.themes').get_dropdown {}";
+          };
+        };
         defaults = {
           file_ignore_patterns = ["node_modules"];
           mappings = {
@@ -20,6 +25,15 @@
             };
           };
         };
+      };
+    };
+
+    extraPlugins = with pkgs.vimPlugins; {
+      ui-select = {
+        package = telescope-ui-select-nvim;
+        setup = ''
+          require("telescope").load_extension("ui-select")
+        '';
       };
     };
   };
