@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   vim = {
     snippets.luasnip.enable = true;
 
@@ -20,7 +16,7 @@
       mappings = {
         next = "<C-n>";
         previous = "<C-p>";
-        complete = "<C-Space>";
+        complete = "<C-CR>";
         confirm = "<CR>";
       };
 

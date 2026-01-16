@@ -5,6 +5,7 @@
     ./binds.nix
     ./key-maps.nix
     ./custom.nix
+    ./codeium.nix
     ./git.nix
     ./neo-tree.nix
     ./telescope.nix
