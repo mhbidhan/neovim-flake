@@ -18,6 +18,7 @@
       python.enable = true;
       rust.enable = true;
       ts.enable = true;
+      json.enable = true;
       markdown.enable = true;
       bash.enable = true;
       html.enable = true;
