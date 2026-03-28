@@ -37,7 +37,10 @@
     {
       key = "<leader>s";
       action = ":lua vim.lsp.buf.format()<CR>";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       desc = "Format file or selection";
     }
     {
@@ -48,7 +51,10 @@
     {
       key = "<leader>p";
       action = "\"_dP";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       silent = true;
       desc = "Paste without losing register";
     }
@@ -241,6 +247,13 @@
       action = "<cmd>AerialNext<CR>";
       mode = "n";
       desc = "Next Symbol";
+    }
+    {
+      mode = "n";
+      key = "<Leader>l";
+      action = ":lua local word = vim.fn.expand('<cword>'); local ft = vim.bo.filetype; local line; if ft == 'javascript' or ft == 'typescript' then line = 'console.log(\"' .. word .. ':\", ' .. word .. ');'; elseif ft == 'go' then line = 'fmt.Println(\"' .. word .. ':\", ' .. word .. ')'; elseif ft == 'python' then line = 'print(f\"' .. word .. ': {' .. word .. '}\")'  else line = 'print(' .. word .. ')' end; vim.fn.append(vim.fn.line('.'), line)<CR>";
+      silent = true;
+      desc = "Log word under cursor";
     }
   ];
 }
