@@ -6,6 +6,7 @@
     ./key-maps.nix
     ./custom.nix
     ./codeium.nix
+    ./comment-highlight.nix
     ./git.nix
     ./neo-tree.nix
     ./telescope.nix
