@@ -56,15 +56,14 @@
       rust-analyzer
       omnisharp-roslyn
       codeium
-      nodePackages.prettier
+      prettier
       angular-language-server
     ];
 
     luaConfigRC.emmet-ls = ''
       require("luasnip.loaders.from_vscode").lazy_load()
 
-
-      require('lspconfig').emmet_ls.setup({
+      vim.lsp.config('emmet_ls', {
         filetypes = {
           "css", "eruby", "htmlangular", "html", "javascript", "javascriptreact",
           "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue"
@@ -77,6 +76,8 @@
           },
         }
       })
+
+      vim.lsp.enable('emmet_ls')
     '';
   };
 }
