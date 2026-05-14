@@ -26,6 +26,7 @@
       # jsx.enable = true;
       tailwind.enable = true;
       go.enable = true;
+      yaml.enable = true;
       java.enable = true;
       csharp.enable = true;
       sql.enable = true;
