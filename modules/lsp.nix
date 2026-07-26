@@ -4,6 +4,7 @@
       enable = true;
       grammars = [
         pkgs.vimPlugins.nvim-treesitter-parsers.tsx
+        pkgs.vimPlugins.nvim-treesitter-parsers.vue
         pkgs.vimPlugins.nvim-treesitter-parsers.typescript
       ];
     };
@@ -23,13 +24,18 @@
       bash.enable = true;
       html.enable = true;
       css.enable = true;
-      # jsx.enable = true;
       tailwind.enable = true;
       go.enable = true;
       yaml.enable = true;
       java.enable = true;
-      csharp.enable = true;
       sql.enable = true;
+      csharp = {
+        enable = true;
+        lsp = {
+          enable = true;
+          server = "omnisharp";
+        };
+      };
     };
 
     snippets.luasnip.enable = true;
