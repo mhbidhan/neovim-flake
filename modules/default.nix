@@ -1,21 +1,24 @@
 {...}: {
   imports = [
+    ./aerial.nix
     ./auto-close.nix
     ./auto-complete.nix
     ./binds.nix
-    ./key-maps.nix
-    ./custom.nix
+    ./clipboard.nix
     ./codeium.nix
     ./comment-highlight.nix
-    ./git.nix
-    ./neo-tree.nix
-    ./telescope.nix
-    ./lsp.nix
+    ./custom.nix
     ./formatter.nix
-    ./theme.nix
+    ./git.nix
     ./harpoon.nix
-    ./aerial.nix
-    ./clipboard.nix
+    ./key-maps.nix
+    ./lsp.nix
+    ./neo-tree.nix
+    ./rocket-log.nix
+    ./snacks-nvim.nix
+    ./telescope.nix
+    ./theme.nix
+    ./tpope.nix
     ./treesitter-context.nix
   ];
 

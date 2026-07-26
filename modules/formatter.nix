@@ -1,16 +1,20 @@
 {pkgs, ...}: {
   vim = {
-    extraPackages = [pkgs.prettier];
+    extraPackages = [
+      pkgs.prettier
+    ];
 
     formatter.conform-nvim = {
       enable = true;
       setupOpts = {
         formatters_by_ft = {
+          css = ["prettier"];
           html = ["prettier"];
           htmlangular = ["prettier"];
-          css = ["prettier"];
           javascript = ["prettier"];
           typescript = ["prettier"];
+          typescriptreact = ["prettier"];
+          vue = ["prettier"];
         };
         format_on_save = {
           timeout_ms = 500;
