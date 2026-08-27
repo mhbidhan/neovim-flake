@@ -33,7 +33,17 @@
     };
 
     visuals = {
-      nvim-web-devicons.enable = true;
+      nvim-web-devicons = {
+        enable = true;
+        setupOpts.override = {
+          hcl = {
+            icon = "";
+            color = "#5F43E9";
+            cterm_color = "98";
+            name = "HCL";
+          };
+        };
+      };
       cinnamon-nvim.enable = true;
       fidget-nvim.enable = true;
 
