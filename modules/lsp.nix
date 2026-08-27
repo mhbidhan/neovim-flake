@@ -21,6 +21,8 @@
       ts.enable = true;
       json.enable = true;
       markdown.enable = true;
+      hcl.enable = true;
+      terraform.enable = true;
       bash.enable = true;
       html.enable = true;
       css.enable = true;
