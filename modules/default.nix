@@ -5,7 +5,6 @@
     ./auto-complete.nix
     ./binds.nix
     ./clipboard.nix
-    ./codeium.nix
     ./comment-highlight.nix
     ./custom.nix
     ./formatter.nix
@@ -14,7 +13,6 @@
     ./key-maps.nix
     ./lsp.nix
     ./neo-tree.nix
-    ./rocket-log.nix
     ./snacks-nvim.nix
     ./telescope.nix
     ./theme.nix
@@ -33,7 +31,17 @@
     };
 
     visuals = {
-      nvim-web-devicons.enable = true;
+      nvim-web-devicons = {
+        enable = true;
+        setupOpts.override = {
+          hcl = {
+            icon = "";
+            color = "#5F43E9";
+            cterm_color = "98";
+            name = "HCL";
+          };
+        };
+      };
       cinnamon-nvim.enable = true;
       fidget-nvim.enable = true;
 

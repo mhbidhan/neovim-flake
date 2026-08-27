@@ -15,27 +15,13 @@
       enableExtraDiagnostics = true;
 
       # Languages
-      nix.enable = true;
-      python.enable = true;
-      rust.enable = true;
-      ts.enable = true;
+      bash.enable = true;
+      hcl.enable = true;
       json.enable = true;
       markdown.enable = true;
-      bash.enable = true;
-      html.enable = true;
-      css.enable = true;
-      tailwind.enable = true;
-      go.enable = true;
+      nix.enable = true;
+      terraform.enable = true;
       yaml.enable = true;
-      java.enable = true;
-      sql.enable = true;
-      csharp = {
-        enable = true;
-        lsp = {
-          enable = true;
-          server = "omnisharp";
-        };
-      };
     };
 
     snippets.luasnip.enable = true;
