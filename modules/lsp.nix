@@ -3,6 +3,7 @@
     treesitter = {
       enable = true;
       grammars = [
+        pkgs.vimPlugins.nvim-treesitter-parsers.caddy
         pkgs.vimPlugins.nvim-treesitter-parsers.tsx
         pkgs.vimPlugins.nvim-treesitter-parsers.vue
         pkgs.vimPlugins.nvim-treesitter-parsers.typescript
@@ -68,6 +69,33 @@
       prettier
       angular-language-server
     ];
+
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts = {
+        formatters_by_ft = {
+          caddy = ["caddy_fmt"];
+        };
+        formatters = {
+          caddy_fmt = {
+            command = "${pkgs.caddy}/bin/caddy";
+            args = ["fmt" "-"];
+            stdin = true;
+          };
+        };
+      };
+    };
+
+    luaConfigRC.caddy-filetype = "
+      vim.filetype.add({
+        filename = {
+          [\"Caddyfile\"] = \"caddy\",
+        },
+        extension = {
+          [\"caddy\"] = \"caddy\",
+        },
+      })
+    ";
 
     luaConfigRC.emmet-ls = ''
       require("luasnip.loaders.from_vscode").lazy_load()
