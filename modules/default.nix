@@ -14,7 +14,6 @@
     ./key-maps.nix
     ./lsp.nix
     ./neo-tree.nix
-    ./rocket-log.nix
     ./snacks-nvim.nix
     ./telescope.nix
     ./theme.nix
